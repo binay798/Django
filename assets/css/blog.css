@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+hr.horizontal{
+    border-top:3px solid orange;
+    margin:0; 
+}
+.third{
+    margin-top: 5%;
+}
+.jum > .jumbotron{
+    margin:0px;
+    padding:10px;
+}
+.list{
+    margin-right: 5%;
+}
+.list > li{
+    margin-right: 1.5em;
+}
+.list > li >a{
+    font-size: 18px;
+    color:white;
+}
+.list > li >a:hover{
+    color:orange;
+}
+.hey > p{
+    margin:0;
+    
+    color:rgb(187, 173, 173);
+}
+.hey{
+    margin: 2em;
+}
+.hr{
+    border-top:2px solid rgb(75, 73, 73);
+    margin: 0;
+    padding:0;
+}
+.hey > h4 small{
+    color:rgb(226, 196, 24);
+    font-weight: bold;
+}

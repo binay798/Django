@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>Blog</title>
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-sm  bg-dark sticky-top">
+        <div class="container-fluid">
+            <img src="{% static 'images/w3newbie.png' %}" class="navbar-brand img-fluid" style="height:2em;" >
+            <button type="button" class="navbar-toggler navbar-dark" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarResponsive">
+                <ul class="navbar-nav ml-auto list">
+                    <li class="nav-item ">
+                        <a class="nav-link " href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+    </nav>
+    <!--background image-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-sm-2 text-center p-0 lst">
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="#"style="text-decoration:none;">Add Post</a></li>
+                    <li class="list-group-item"><a href="#"style="text-decoration:none;">Add Post</a></li>
+                    <li class="list-group-item"><a href="#"style="text-decoration:none;">Add Post</a></li>
+                </ul>
+            </div>
+            <div class="col-12 col-sm-10 p-0 one">
+                <img src="{% static 'images/nature2.jpg' %}" class="img-fluid" style="width:100%; ">
+                
+            </div>
+        </div>
+        
+    </div>
+    <hr class="horizontal">
+
+    <!--Third container-->
+    <div class="container-fluid third">
+        <div class="row">
+            <div class="col-sm-8">
+                {% for post in posts %}
+                <h3 class="mb-0">{{post.topic}}</h3>
+                <h6 class="text-gray mb-0"><small>Posted on : {{post.date|date:"h D,M,Y"}}</small></h6>
+                <div class="progress mb-4" style="height: 5px;">
+                    <div class="progress-bar bg-danger" style="width: 50%;"></div>
+                    <div class="progress-bar " style="width: 10%;"></div>
+                </div>
+                <div class="media">
+                    <img src="{{post.img.url}}" alt="" class="img-fluid img-thumbnail" style="width:35%;">
+                    <div class="media-body ml-4">
+                        <p>{{post.desc}}
+                        </p>
+                        <button type="button" class="btn btn-primary " style="float: right;">Read more</button>
+                    </div>
+                </div>
+                <br>
+                {% endfor %}
+
+                
+                
+            </div>
+
+
+
+            <div class="col-sm-4">
+                <div class="col-sm-12">
+                    <h1>Popular Posts</h1>
+                    {% for popular_post in popular %}
+                    <div class="media">
+                        <img src="{{popular_post.img.url}}" class="img-fluid img-thumbnail" style="width:40%;">
+                        <div class="media-body pl-3">
+                            <p>{{popular_post.desc|slice:":50"}}</p>
+                        </div>
+                    </div>
+                    <br>
+                    {% endfor %}
+                    
+                </div>
+                <div class="col-sm-12 mt-3 jum">
+                    <h1>Recent Posts</h1>
+                    <div class="container-fluid jumbotron" style="width:70%;">
+                        {% for topic in topics %}
+                        <a href="#"><p class=" text-secondary" style="margin:0px;">{{topic.topic|slice:":15"}}...</p></a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-sm-12 mt-3 jum">
+                    <h1>Categories</h1>
+                    <div class="container-fluid jumbotron " style="width:70%;">
+                        <p style="margin:0px; " class="text-secondary">Hello</p>
+                        <p style="margin:0px; " class="text-secondary">Entertainment</p>
+                        <p style="margin:0px; " class="text-secondary">Rock climbing</p>
+                        <p style="margin:0px; " class="text-secondary">Chess</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--fourth container-->
+    <div class="container-fluid bg-dark">
+        <div class="row justify-content-center  text-center">
+            <div class="col-sm-3 hey">
+                <h4 class=" del mb-4"><small>DOOGEE</small></h4>
+                <p>Teardowns</p>
+                <p>News</p>
+                <p>Partners</p>
+                <p>About us</p>
+                <p>Contact us</p>
+                <p>Terms of use</p>
+            </div>
+            <div class="col-sm-3 hey">
+                <h4 class=" mb-4 "><small>SERVICES</small></h4>
+                <p>Compare</p>
+                <p>Download</p>
+                <p>Feedback</p>
+                <p>Bug report</p>
+            </div>
+            <div class="col-sm-3 hey">
+                <h4 class=" mb-4"><small>ACTIVITY</small></h4>
+                <p>Influencer</p>
+                <p>Affliate</p>
+                <p>Co-branding</p>
+                <p>Honor</p>
+                <p>Giveaway</p>
+            </div>
+        </div>
+    </div>
+    <hr class="hr">
+    <div class="container-fluid bg-dark">
+        <h4 class="text-center text-light m-0 p-4"><small>&copy; binay6014@gmail.com</small></h4>
+    </div>
+
+
+</body>
+</html>
