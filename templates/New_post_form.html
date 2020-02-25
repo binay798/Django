@@ -25,10 +25,10 @@
 </head>
 <body>
     <div class="container">
-        <form action="{% url 'blog:index' %}" method="post" enctype="multipart/form-data">
+        <form action="{% url 'blog:add_post' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
-            <input type="submit">
+            <button name='submit'>Submit</button>
         </form>
     </div>
 </body>
