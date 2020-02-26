@@ -14,12 +14,12 @@ class TopicForm(forms.ModelForm):
                 
             }),
             'desc':forms.Textarea(attrs={
-                'class':'desc-form'
+                'class':'form-control'
             }),
+            
         }
 
 class EditForm(forms.ModelForm):
     class Meta:
         model = Posts
         fields = '__all__'
-        

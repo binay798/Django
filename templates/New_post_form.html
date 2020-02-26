@@ -1,35 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .form-control{
-            padding: 1em;
-            border-radius: 5px;
-        }
-        .desc-form{
-            height:4em;
-            width: 20%;
-            border-radius: 5px;
-            font-family: sans-serif;
-        }
-        label{
-            font-family: sans-serif;
-            font-weight: 400;
-            display: block;
-        }
-        
-    </style>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
     <div class="container">
         <form action="{% url 'blog:add_post' %}" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{form.as_p}}
-            <button name='submit'>Submit</button>
+            <button name='submit' class="btn btn-primary">Submit</button>
         </form>
     </div>
-</body>
-</html>
+
+{% endblock %}

@@ -44,3 +44,8 @@ hr.horizontal{
     color:rgb(226, 196, 24);
     font-weight: bold;
 }
+.social{
+    font-size: 60px;
+    padding:10px;
+    margin-left: .6em;
+}
