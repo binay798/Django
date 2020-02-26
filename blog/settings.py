@@ -25,7 +25,7 @@ SECRET_KEY = 'fs2#4_48a6vn6y&xsd%k1x5w&m@nw7_8+8h=d=r+h+blcl8_cy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
